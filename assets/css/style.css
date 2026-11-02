@@ -169,10 +169,7 @@ button {
     width: 100%;
     font-size: 16px;
     font-family: Arial, Helvetica, sans-serif;
-}
-
-#consenso {
-    width: auto;
+    background-color: #F5F7FB;
 }
 
 input::placeholder,
@@ -191,7 +188,6 @@ button {
     color: antiquewhite;
     background-color: hsl(220, 60%, 30%);
     font-weight: bold;
-    width: 30%;
     padding: 12px 24px;
     border-radius: 4px;
     box-shadow: 0 2px 4px rgba(0, 0, 0.1)
@@ -210,12 +206,47 @@ button:hover {
 }
 
 
+.table-wrapper {
+    overflow-x: auto;
+}
 
 table {
     border-collapse: collapse;
+    min-width: 480px;
 }
 
 tr,
 td {
     border: 2px solid black;
+}
+
+/* media */
+
+@media (min-width: 768px) {
+    #site-header {
+        padding: 60px 20px 40px;
+    }
+
+    main {
+        padding: 40px 20px;
+    }
+
+    main section {
+        padding: 32px;
+    }
+
+    .avatar {
+        float: left;
+        margin: 0 24px 12px 0;
+    }
+
+    input:not([type="checkbox"]),
+    textarea,
+    select {
+        width: 60%;
+    }
+
+    button {
+        width: auto;
+    }
 }
