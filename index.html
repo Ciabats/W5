@@ -5,7 +5,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mario Rossi</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=fiber_new" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=fiber_new" />
     <link rel="stylesheet" href="assets/css/style.css" type="text/css">
 </head>
 
@@ -15,7 +16,7 @@
     <header id="site-header">
         <h1>Mario Rossi</h1>
         <nav>
-            >
+
             <p class="tagline"><strong>Studente Full-Stack</strong> - corso Epicode 2026</p>
 
             <ul>
@@ -33,7 +34,7 @@
         <section id="chi-sono">
             <h2>Chi sono</h2>
 
-            <img src="\assets\img\WA_1786564436959.jpeg" alt="Foto profil" width="200" height="200" class="avatar">
+            <img src="assets/img/WA_1786564436959.jpeg" alt="Foto profil" width="200" height="200" class="avatar">
 
             <p>
                 Mi chiamo Mario Rossi e sto imparando a programmare. Studio sviluppo web
@@ -71,35 +72,37 @@
 
             <p>Un riepilogo del mio percorso formativo e lavorativo recente.</p>
 
-            <table>
-                <caption>
-                    Esperienze formative e lavorative
-                </caption>
-                <thead>
-                    <tr>
-                        <th scope="col">Anno</th>
-                        <th scope="col">Ruolo</th>
-                        <th scope="col">Azienda/Scuola</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>2026</td>
-                        <td>Studente Full Stack</td>
-                        <td>Epicode</td>
-                    </tr>
-                    <tr>
-                        <td>2024-2025</td>
-                        <td>Libraio</td>
-                        <td>Libreria Centrale, Milano</td>
-                    </tr>
-                    <tr>
-                        <td>2018-2022</td>
-                        <td>Studente di Lettere</td>
-                        <td>Università degli Studi di Milano</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="table-wrapper">
+                <table>
+                    <caption>
+                        Esperienze formative e lavorative
+                    </caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Anno</th>
+                            <th scope="col">Ruolo</th>
+                            <th scope="col">Azienda/Scuola</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2026</td>
+                            <td>Studente Full Stack</td>
+                            <td>Epicode</td>
+                        </tr>
+                        <tr>
+                            <td>2024-2025</td>
+                            <td>Libraio</td>
+                            <td>Libreria Centrale, Milano</td>
+                        </tr>
+                        <tr>
+                            <td>2018-2022</td>
+                            <td>Studente di Lettere</td>
+                            <td>Università degli Studi di Milano</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </section>
 
         <!-- Blocco 4: lista dei progetti -->
@@ -170,7 +173,7 @@
                     </select>
                     <br>
                     <br>
-                    <label for="date">Data preferita per la risposta</label>
+                    <label for="data">Data preferita per la risposta</label>
                     <br>
                     <input type="date" id="data" name="data" />
                     <br>
@@ -181,8 +184,8 @@
                         required></textarea>
                     <br>
                     <br>
-                    <input type="checkbox" id="accettazione" name="accettazione" required />
-                    <label for="accettazione">Accetto di essere ricontattato all'indirizzo indicato</label>
+                    <input type="checkbox" id="consenso" name="consenso" required />
+                    <label for="consenso">Accetto di essere ricontattato all'indirizzo indicato</label>
                     <br>
                     <br>
                     <button type="submit">Invia</button>
