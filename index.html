@@ -227,6 +227,7 @@
 
             <h2>Contattami</h2>
 
+            <!-- Link sempre visibile che porta all'inizio della pagina, al click apre il mofulo(form) per i contatti -->
             <button type="button" id="apri-contatti">Scrivimi</button>
 
             <a href="index.html" class="torna-su"><i class="fa-solid fa-house"></i>Back on top</a>
@@ -234,13 +235,15 @@
 
     </main>
 
-    <a href="#site-header" class="back-to-top" aria-label="Torna in cima">
+    <a href="index.html" class="back-to-top" aria-label="Torna in cima">
         <svg viewBox="0 0 24 24" aria-hidden="true">
             <path d="M12 5 4 13h5v6h6v-6h5z" />
         </svg>
     </a>
 
+<!-- Overlay del modal: l'attributo hidden lo tiene nascosto all'apertura della pagina. -->
     <div id="overlay-contatti" class="overlay" hidden>
+         <!-- Il riquadro contiene il form e il pulsante per chiuderlo. -->
         <div class="modal">
             <button type="button" class="close" id="chiudi-contatti" aria-label="Chiudi">&times;</button>
 
