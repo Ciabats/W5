@@ -1,259 +1,373 @@
 *,
-*::before {
+*::before,
+*::after {
     box-sizing: border-box;
 }
 
 body {
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 16px;
-    line-height: 1.7;
-    color: black;
+    font-family: 'Inter', Arial, sans-serif;
+    background-color: #f4f1ec;
+    color: #2b2b2b;
 }
 
-img {
-    max-width: 100%;
-    height: auto;
+/* cambio font titoli */
+h1,
+h2,
+h3 {
+    font-family: 'Playfair', Georgia, serif;
+    color: hsl(220, 60%, 25%);
 }
 
-main {
-    max-width: 920px;
-    margin: 0 auto;
-    padding: 16px;
 
+header {
+    text-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
 }
 
 #site-header {
-    background-image: url(../img/pexels-mattia-sacco-306415812-33811723.jpg);
+    background-image: url(../img/header-bg.jpg);
     background-size: cover;
     background-position: center;
     text-align: center;
-    padding: 30px 16px 20px;
-    border-bottom: 4px solid goldenrod;
-
+    padding: 60px 20px 40px;
+    border-bottom: 4px solid hsl(45, 90%, 60%);
 }
 
 #site-header h1 {
-    font-size: clamp(2rem, 8vw, 3rem);
+    font-size: 3rem;
     font-weight: bold;
     font-style: italic;
     color: white;
+
+}
+
+.sottotitolo {
+    color: #f0e7c8;
 }
 
 #site-header nav ul {
-    text-align: center;
-    padding: 0;
     margin: 0;
 }
 
-#site-header nav ul li {
-    display: inline-block;
+#site-header nav li {
+    display: inline;
+    border: 5px;
+    padding: 5px;
 }
 
-/* Nav */
-nav a {
-    color: hsl(57, 90%, 50%);
-    font-weight: bold;
-    line-height: 3;
+#site-header a {
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    text-decoration: none;
+
 }
 
-nav a:hover {
-    color: #fff;
-    background-color: rgba(255, 255, 255, 0.5)
+#site-header a:hover {
+    background-color: hsl(45, 90%, 60%);
+    border: hsl(45, 90%, 60%);
+    color: black;
 }
 
-.tagline {
-    color: #F44A4A;
-    font-style: italic;
+
+p {
+    line-height: 1.6;
 }
 
-h2{
-    font-size: clamp(1.3rem, 4vw, 1.8rem);
-    font-size: 2em;
-    text-align: left
-}
-h3 {
-    color: #1F3D7A;
-    font-size: 1.5em;
-    text-align: left
+#site-header strong::after {
+    content: "\f121";
+    font-family: "Font Awesome 6 Free";
 }
 
-section h2::before {
-    content: '- ';
-    color: goldenrod;
+
+/* inzio lavoro main */
+main {
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 40px 20px;
+
 }
 
-main section {
-    padding: 16px;
+/* modello le sezioni */
+section {
+    padding: 32px;
     margin-bottom: 24px;
-    border: 1px solid #0e0e0e;
+    border: 1px solid #e6e0d3;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
     border-radius: 8px;
-    box-shadow: 0 2px 6px rgb(100, 99, 99);
+    background-color: white;
 }
 
-.avatar {
-    display: block;
-    height: 200px;
-    width: 200px;
-    border: 4px solid gold;
-    border-radius: 50%;
-    margin: 0 auto 16px;
+section h2 {
+    color: hsl(220, 60%, 25%);
 }
 
-#competenze {
-    clear: both;
+h2::before {
+    content: "\f111";
+    color: hsl(45, 90%, 50%);
+    font-family: "Font Awesome 6 Free";
+    font-size: 15px;
+    margin-right: 8px;
+}
+
+.torna-su{
+    text-decoration: none;
+    color:hsl(45, 90%, 50%);;
+}
+
+.torna-su i{
+    padding-right: 5px;
+}
+
+.torna-su:hover{
+    color:brown ;
+}
+
+/* stilizzo sottotitoli sezioni */
+
+#chi-sono {
+    margin-top: -80px;
+
 }
 
 #chi-sono p:first-of-type::first-letter {
     font-weight: bold;
     font-size: 3rem;
-    float: left;
+    font-family: 'Times New Roman', Times, serif;
     margin-right: 6px;
-    color: magenta;
+    color: hsl(220, 60%, 30%);
 }
 
-
-
-#chi-sono {
-
-    background-color: #ffffff;
-    text-align: justify;
+/* cambio forma immagine */
+.avatar {
+    height: 140px;
+    width: 140px;
+    border-radius: 50%;
+    float: left;
+    border: 5px solid hsl(45, 90%, 60%);
+    margin: 0 24px 12px 0;
 }
 
-#chi-sono p:first-of-type {
-    font-style: italic;
-    font-size: 1.5rem;
-    color: #2D3953;
-}
-
-.project:first-of-type h4::after {
-    content: 'NEW';
-    display: inline-block;
-    padding: 2px 8px;
-    margin-left: 12px;
-    background-color: red;
-    color: #FFFFFF;
-    border-radius: 3px;
-    font-size: 0.75rem;
-}
-
-.skill-list li:nth-child(odd) {
-    background-color: #F5F7FB;
-}
-
-.skill-list li:first-child {
-    font-weight: bold;
-}
-
-.project:nth-of-type(odd) {
-    background-color: #FBF8EF;
-}
-
-.project:nth-of-type(even) {
-    background-color: #FFFFFF
-}
-
-label {
-    font-weight: bold;
-    color: #1F3D7A;
-}
-
-#accettazione {
-    margin: 0;
-
-}
-
-input,
-textarea,
-select,
-button {
-    width: 100%;
-    font-size: 16px;
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #F5F7FB;
-}
-
-input::placeholder,
-textarea::placeholder {
-    color: #999;
-    font-style: italic;
-}
-
-/* input:focus,
-textarea:focus {
-    background-color: black;
-    color: #FFFFFF;
+/* stilizzo icone font awesome */
+/* h2 i{
+    color: hsl(45, 90%, 50%);
+    height: 10px;
 } */
 
-button {
-    color: antiquewhite;
-    background-color: hsl(220, 60%, 30%);
+/* sezione competenze tabella */
+#competenze table {
+    border-collapse: collapse;
+    width: 100%;
+    text-align: left;
+}
+
+#competenze table caption {
+    color: hsl(220, 30%, 40%);
+    display: inline-block;
+    padding: 12px 14px;
+}
+
+#competenze table th {
+    color: hsl(220, 60%, 25%);
+    background-color: #ece6d8;
+    padding: 12px 14px;
+}
+
+/* barre progressive */
+.bar {
+    background-color: #ece6d8;
+    border-radius: 6px;
+    height: 12px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+
+.bar-fill {
+    background-color: hsl(45, 90%, 50%);
+    height: 100%;
+    border-radius: 6px;
+}
+
+#competenze table td {
+    padding: 12px 14px;
+    border: 1px solid #ece6d8;
+    border-left: none;
+    border-right: none;
+}
+
+#competenze table i {
+    color: hsl(220, 60%, 30%);
+    padding: 5px;
+}
+
+#progress-bar {
+    accent-color: gold;
+
+}
+
+/* sezione esperienze */
+
+#esperienze table {
+    border-collapse: collapse;
+    margin: 0 auto;
+    width: 100%;
+}
+
+#esperienze table caption {
+    color: hsl(220, 30%, 40%);
+    display: inline-block;
+}
+
+#esperienze table th {
+    color: hsl(220, 60%, 25%);
+    background-color: #ece6d8;
+    padding: 12px 14px;
+}
+
+#esperienze table td {
+    border: 1px solid #ece6d8;
+    border-left: none;
+    border-right: none;
+    padding: 12px 14px;
+}
+
+
+/* sezione progetti */
+
+article {
+    border: 1px solid #e6e0d3;
+    border-radius: 5px;
+    margin-top: 10px;
+    background-color: #ece6d8;
+    border-left: 5px solid hsl(220, 60%, 30%);
+}
+
+article h3,
+p,
+i {
+    padding-left: 15px;
+}
+
+/* giustifica testo progetti */
+/* .card{
+    display: inline-block;
+    padding: 2px 9px;
+} */
+
+article:nth-child(even) {
+    background-color: white;
+    border-left: 5px solid hsl(45, 90%, 50%);
+}
+
+.fa-brands .fa-github {
+    border-left: 8px;
+}
+
+.codes {
+    text-decoration: none;
+    color: hsl(220, 60%, 30%);
+}
+
+#dettaglio {
+    display: block;
+    width: fit-content;
+    margin: 18px 0 0 auto;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    color: hsl(220, 60%, 30%);
+    margin-top: 10px;
+    align-self: end;
+}
+
+/* stilizzazione sezione contatti */
+
+/* form */
+.input {
     font-weight: bold;
-    padding: 12px 24px;
-    border-radius: 4px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0.1)
+    color: hsl(220, 60%, 30%);
+}
+
+input:not([type="checkbox"]),
+textarea,
+select {
+    background-color: #fbf8f1;
+    border: 1px solid #d6cfbf;
+    width: 100%;
+    padding: 10px 12px;
+}
+
+input:focus {
+    background-color: white;
+}
+
+textarea:focus {
+    background-color: white;
+}
+
+button {
+    color: white;
+    background-color: hsl(220, 60%, 30%);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px 10px;
+    border-radius: 5px;
+    width: 10%;
+    height: 35px;
 }
 
 button:hover {
-    color: hsl(220, 60%, 45%);
-    box-shadow: 0 4px 8px rgba(0, 0, 0.15);
+    background-color: hsl(220, 60%, 45%);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.18);
 }
+
+#submit::before {
+    content: "\f1d8";
+    font-family: "Font Awesome 6 Free";
+    margin-right: 8px;
+}
+
+/* stilizzo il footer */
 
 #side-footer {
     background-color: #172136;
     color: #FFFFFF;
     text-align: center;
     font-size: 0.9rem;
+    padding: 30px 20px;
 }
 
-
-.table-wrapper {
-    overflow-x: auto;
+.social {
+    display: inline;
+    margin-bottom: 14px;
+    text-align: center;
 }
 
-table {
-    border-collapse: collapse;
-    min-width: 480px;
+.social a {
+    display: inline-block;
+    width: 43px;
+    height: 43px;
+    margin: 0 5px;
+
+    text-decoration: none;
+    text-align: center;
+    color: white;
+    line-height: 43px;
+    vertical-align: middle;
+
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 50%;
+
 }
 
-tr,
-td {
-    border: 2px solid black;
+.social a i{
+    line-height: 1;
+  vertical-align: middle;
+  font-size: 24px;
+  padding-left: 0px;
+
 }
-
-/* media */
-
-@media (min-width: 768px) {
-    #site-header {
-        padding: 60px 20px 40px;
-    }
-
-    main {
-        padding: 40px 20px;
-    }
-
-    main section {
-        padding: 32px;
-    }
-
-    .avatar {
-        float: left;
-        margin: 0 24px 12px 0;
-    }
-
-    input:not([type="checkbox"]),
-    textarea,
-    select {
-        width: 60%;
-    }
-
-    button {
-        width: auto;
-    }
-}
-
-@media (min-width: 1200px) {
-    #site-header h1 {
-         font-size: 4rem; 
-        }
+ 
+#side-footer p {
+    color: #ece6d8;
+    margin-top: 10px;
+    font-size: 0.9rem;
 }
