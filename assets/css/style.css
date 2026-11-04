@@ -56,14 +56,21 @@ header {
     color: #f0e7c8;
 }
 
+
+/* da BOX-MODEL a FLEXBOX, dispone i link in riga li centra. */
 #site-header nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    /*li manda a capo se manca spazio */
+    justify-content: center;
+    /* centra i link */
+    gap: 4px;
     margin: 0;
     padding: 0;
-    text-align: center;
+    list-style: none;
 }
 
 #site-header nav li {
-    display: inline-block;
     border: 5px;
     padding: 5px;
 }
@@ -143,22 +150,29 @@ h2::before {
     margin-top: -20px;
 }
 
-#chi-sono p:first-of-type::first-letter {
+/* #chi-sono p:first-of-type::first-letter {
     font-weight: bold;
     font-size: 3rem;
     font-family: 'Times New Roman', Times, serif;
     margin-right: 6px;
     color: hsl(220, 60%, 30%);
+} */
+
+.bio {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
 
 /* cambio forma immagine */
 .avatar {
+    flex-shrink: 0;
     display: block;
     height: 140px;
     width: 140px;
     border-radius: 50%;
     border: 5px solid hsl(45, 90%, 60%);
-    margin: 0 auto 16px;
+    margin: 0 auto;
     object-fit: cover;
     object-position: center 35%;
 }
@@ -166,63 +180,27 @@ h2::before {
 
 /* sezione competenze tabella */
 
-.table-wrapper {
-    overflow-x: auto;
+.skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    gap: 3px;
 }
 
-table {
-    min-width: 480px;
+/* stilizzo gli elementi della lista */
+.skill-list li {
+    background-color: hsl(220, 60%, 30%);
+    color: white;
+    border: 3px solid hsl(45, 90%, 60%);
+    border-radius: 500px;
+    padding: 5px 10px;
 }
 
-#competenze table {
-    border-collapse: collapse;
-    width: 100%;
-    text-align: left;
-}
-
-#competenze table caption {
-    color: hsl(220, 30%, 40%);
-    display: inline-block;
-    padding: 12px 14px;
-}
-
-#competenze table th {
-    color: hsl(220, 60%, 25%);
-    background-color: #ece6d8;
-    padding: 12px 14px;
-}
-
-/* barre progressive */
-.bar {
-    background-color: #ece6d8;
-    border-radius: 6px;
-    height: 12px;
-    width: 100%;
-    margin-top: 10px;
-}
-
-
-.bar-fill {
-    background-color: hsl(45, 90%, 50%);
-    height: 100%;
-    border-radius: 6px;
-}
-
-#competenze table td {
-    padding: 12px 14px;
-    border: 1px solid #ece6d8;
-    border-left: none;
-    border-right: none;
-}
-
-#competenze table i {
-    color: hsl(220, 60%, 30%);
-    padding: 5px;
-}
-
-#progress-bar {
-    accent-color: gold;
-
+/* primo elemento di lista evidenziato */
+.skill-list li:first-child {
+    color: black;
+    background-color: hsl(45, 90%, 60%);
+    border: 3px solid hsl(220, 60%, 30%);
 }
 
 /* sezione esperienze */
@@ -254,11 +232,21 @@ table {
 
 /* sezione progetti */
 
+/* container progetti */
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
 /* La card è il riferimento per posizionare il badge al suo interno. */
+/* Le card possono crescere o restringersi */
 .project {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 300px;
     border: 1px solid #e6e0d3;
     border-radius: 5px;
-    margin-top: 10px;
     background-color: #ece6d8;
     border-left: 5px solid hsl(220, 60%, 30%);
     position: relative;
@@ -353,6 +341,10 @@ button {
     height: 35px;
 }
 
+#apri-contatti{
+    width: auto;
+}
+
 button:hover {
     background-color: hsl(220, 60%, 45%);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.18);
@@ -362,6 +354,10 @@ button:hover {
     content: "\f1d8";
     font-family: "Font Awesome 6 Free";
     margin-right: 8px;
+}
+
+#contattami i{
+    margin-top: 10px;
 }
 
 /* button torna-su */
@@ -448,10 +444,15 @@ button:hover {
         margin-top: -80px;
     }
 
-    .avatar {
-        float: left;
-        margin: 0 24px 12px 0;
+    .bio {
+        flex-direction: row;
+        align-items: flex-start;
     }
+
+    .avatar {
+        margin: 0;
+    }
+
 
     input:not([type="checkbox"]),
     textarea,

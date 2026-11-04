@@ -45,20 +45,25 @@
     <main>
 
         <!--Blocco 1: sezione chi-sono -->
+        <!-- Creo un contenitore per immagine e paragrafo per poi modificarli con Flexbox -->
         <section id="chi-sono">
 
             <h2>Chi sono</h2>
 
-            <img src="assets/img/WA_1786564436959.jpeg" alt="foto profilo" class="avatar">
+            <div class="bio">
+                <img src="assets/img/WA_1786564436959.jpeg" alt="foto profilo" class="avatar">
 
-            <p>Mi chiamo Matteo Fratini e sto imparando a programmare.
-                Sto studiando sviluppo web con <strong>Epicode</strong> e ogni giorno aggiorno questa pagina di
-                portfolio personale, applicando i concetti trattati a lezione.
-                Vivo ad Anguillara Sabazia. Vengo da una formazione tecnica con diploma di perito informatico e ora,
-                dopo aver cambiato settore ho deciso di reintraprendere la formazione in questo settore.
+                <div class="testo">
+                    <p>Mi chiamo Matteo Fratini e sto imparando a programmare.
+                        Sto studiando sviluppo web con <strong>Epicode</strong> e ogni giorno aggiorno questa pagina di
+                        portfolio personale, applicando i concetti trattati a lezione.
+                        Vivo ad Anguillara Sabazia. Vengo da una formazione tecnica con diploma di perito informatico e
+                        ora,
+                        dopo aver cambiato settore ho deciso di reintraprendere la formazione in questo settore.
 
-            </p>
-
+                    </p>
+                </div>
+            </div>
             <a href="index.html" class="torna-su"><i class="fa-solid fa-house"></i>Back on top</a>
 
         </section>
@@ -73,55 +78,14 @@
                 Le percentuali sono frutto di autovalutazioni, non certificazioni.
             </p>
 
-            <div class="table-wrapper">
-                <table>
-                    <caption>Stack tecnico - autovalutazione</caption>
-                    <tr>
-                        <th>Tecnologia</th>
-                        <th>Livello</th>
-                    </tr>
-                    <tr>
-                        <td><i class="fa-brands fa-html5"></i>HTML5 semantico</td>
-                        <td>
-                            <div class="bar">
-                                <div class="bar-fill" style="width: 80%"></div>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><i class="fa-brands fa-css3-alt"></i>CSS3</td>
-                        <td>
-                            <div class="bar">
-                                <div class="bar-fill" style="width: 65%"></div>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><i class="fa-brands fa-git-alt"></i>Git e GitHub</td>
-                        <td>
-                            <div class="bar">
-                                <div class="bar-fill" style="width: 60%"></div>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><i class="fa-solid fa-terminal"></i>Linea di comando</td>
-                        <td>
-                            <div class="bar">
-                                <div class="bar-fill" style="width: 30%"></div>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><i class="fa-brands fa-markdown"></i>Markdown e documentazione</td>
-                        <td>
-                            <div class="bar">
-                                <div class="bar-fill" style="width: 85%"></div>
-                            </div>
-                        </td>
-                    </tr>
-                </table>
-            </div>
+            <ul class="skill-list">
+                <li>HTML5 semantico - 80%</li>
+                <li>CSS3 - 65%</li>
+                <li>Git e GitHub - 60%</li>
+                <li>Linea di comando - 30%</li>
+                <li>Markdown e documentazione - 85%</li>
+            </ul>
+
             <br>
             <a href="index.html" class="torna-su"><i class="fa-solid fa-house"></i>Back on top</a>
 
@@ -172,48 +136,52 @@
                 I lavori fatti durante le prime settimane di corso. Ogni card ha un link al repository
             </p>
 
-            <article class="project">
-                <h3>Pagina ricetta</h3>
-                <div class="card">
-                    <p>
-                        Una pagina con titolo, ingredienti e procedura. Esercizio di markup semantico applicato a un
-                        contenuto reale.
-                    </p>
-                    <i class="fa-brands fa-github"></i><a href="javascript:void(0)" target="_blank" class="codes">Vedi
-                        su GitHub</a>
-                </div>
-            </article>
+            <div class="projects-container">
+                <article class="project">
+                    <h3>Pagina ricetta</h3>
+                    <div class="card">
+                        <p>
+                            Una pagina con titolo, ingredienti e procedura. Esercizio di markup semantico applicato a un
+                            contenuto reale.
+                        </p>
+                        <i class="fa-brands fa-github"></i><a href="javascript:void(0)" target="_blank"
+                            class="codes">Vedi
+                            su GitHub</a>
+                    </div>
+                </article>
 
-            <article class="project">
-                <h3>Card di presentazione</h3>
-                <div>
-                    <p>
-                        Un biglietto digitale con nome, ruolo e link ai social. Esercizio di
-                        sintesi sulla struttura HTML.
-                    </p>
-                    <i class="fa-brands fa-github"></i><a href="https://github.com/Ciabats/CODE" target="_blank"
-                        class="codes">Vedi
-                        su
-                        GitHub</a>
-                </div>
+                <article class="project">
+                    <h3>Card di presentazione</h3>
+                    <div>
+                        <p>
+                            Un biglietto digitale con nome, ruolo e link ai social. Esercizio di
+                            sintesi sulla struttura HTML.
+                        </p>
+                        <i class="fa-brands fa-github"></i><a href="https://github.com/Ciabats/CODE" target="_blank"
+                            class="codes">Vedi
+                            su
+                            GitHub</a>
+                    </div>
 
 
-            </article>
+                </article>
 
-            <article class="project">
-                <h3>Portfolio personale</h3>
+                <article class="project">
+                    <h3>Portfolio personale</h3>
 
-                <div>
-                    <p>Questa pagina. Costruita da zero in cinque giorni, dal markup HTML, alla stilizzazione CSS, fino
-                        alla
-                        pubblicazione su GitHub pages.
-                    </p>
+                    <div>
+                        <p>Questa pagina. Costruita da zero in cinque giorni, dal markup HTML, alla stilizzazione CSS,
+                            fino
+                            alla
+                            pubblicazione su GitHub pages.
+                        </p>
 
-                    <i class="fa-brands fa-github"></i><a href="https://github.com/Ciabats/progetto-settimana-1"
-                        target="_blank" class="codes">Vedi su
-                        GitHub</a>
-                </div>
-            </article>
+                        <i class="fa-brands fa-github"></i><a href="https://github.com/Ciabats/progetto-settimana-1"
+                            target="_blank" class="codes">Vedi su
+                            GitHub</a>
+                    </div>
+                </article>
+            </div>
 
             <a href="#" target="_blank" id="dettaglio"><i class="fa-solid fa-arrow-right"></i>Tutti i progetti in
                 dettaglio</a>
@@ -229,7 +197,7 @@
 
             <!-- Link sempre visibile che porta all'inizio della pagina, al click apre il mofulo(form) per i contatti -->
             <button type="button" id="apri-contatti">Scrivimi</button>
-
+            <br>
             <a href="index.html" class="torna-su"><i class="fa-solid fa-house"></i>Back on top</a>
         </section>
 
@@ -241,9 +209,9 @@
         </svg>
     </a>
 
-<!-- Overlay del modal: l'attributo hidden lo tiene nascosto all'apertura della pagina. -->
+    <!-- Overlay del modal: l'attributo hidden lo tiene nascosto all'apertura della pagina. -->
     <div id="overlay-contatti" class="overlay" hidden>
-         <!-- Il riquadro contiene il form e il pulsante per chiuderlo. -->
+        <!-- Il riquadro contiene il form e il pulsante per chiuderlo. -->
         <div class="modal">
             <button type="button" class="close" id="chiudi-contatti" aria-label="Chiudi">&times;</button>
 
@@ -286,26 +254,27 @@
                 <br>
                 <br>
                 <button type="submit" id="submit">Invia</button>
-
             </form>
-
+            <!--fine riquadro modal -->
         </div>
+        <!--fine l'overlay dei contatti -->
+    </div>
 
-        <!-- Piede pagina con copyright -->
-        <footer id="side-footer">
-            <div class="social">
-                <a href="https://github.com/" class="git" target="_blank"><i class="fa-brands fa-github"></i></a>
-                <a href="https://www.linkedin.com/" class="linkedin" target="_blank"><i
-                        class="fa-brands fa-linkedin"></i></a>
-                <a href="https://mail.google.com/mail/u/0/#inbox" class="email" target="_blank"><i
-                        class="fa-regular fa-envelope"></i></a>
-                <a href="https://www.instagram.com/" class="instagram" target="_blank"><i
-                        class="fa-brands fa-instagram"></i></a>
-            </div>
-            <p>@2026 Matteo Fratini - Costruito a mano durante la prima settimana del corso Epicode</p>
-        </footer>
+    <!-- Piede pagina con copyright -->
+    <footer id="side-footer">
+        <div class="social">
+            <a href="https://github.com/" class="git" target="_blank"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.linkedin.com/" class="linkedin" target="_blank"><i
+                    class="fa-brands fa-linkedin"></i></a>
+            <a href="https://mail.google.com/mail/u/0/#inbox" class="email" target="_blank"><i>
+                    class="fa-regular fa-envelope"></i></a>
+            <a href="https://www.instagram.com/" class="instagram" target="_blank"><i
+                    class="fa-brands fa-instagram"></i></a>
+        </div>
+        <p>@2026 Matteo Fratini - Costruito a mano durante la prima settimana del corso Epicode</p>
+    </footer>
 
-        <script src="/assets/script/script.js"></script>
+    <script src="/assets/script/script.js"></script>
 
 </body>
 
