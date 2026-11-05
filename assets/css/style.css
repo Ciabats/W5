@@ -1,3 +1,70 @@
+/* ciclo che ingrandisce il badge e poi lo riporta alla dimensione normale. */
+@keyframes pulse-badge {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.08);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* L'overlay passa gradualmente da trasparente a visibile. */
+@keyframes overlay-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Il riquadro entra dal basso e termina centrato nell'overlay. */
+@keyframes modal-in {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -40%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+/* Allarga e sfuma un alone attorno al pulsante, poi riparte. */
+@keyframes pulse-ring {
+    0% {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2),
+            0 0 0 0 rgba(34, 76, 161, 0.6);
+    }
+
+    100% {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2),
+            0 0 0 18px rgba(34, 76, 161, 0);
+    }
+}
+
+/* Le sezioni partono più in basso e trasparenti, poi appaiono. */
+@keyframes section-in {
+    from {
+        opacity: 0;  /* rende inizialmente trasparente */
+        transform: translateY(12px);  /* fa iniziare ogni sezione un po’ più in basso */
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ----------------------------------------------------------------------------------------------------------------- */
+
 *,
 *::before,
 *::after {
@@ -42,6 +109,7 @@ header {
     position: sticky;
     top: 0;
     z-index: 100;
+
 }
 
 #site-header h1 {
@@ -76,16 +144,19 @@ header {
 }
 
 #site-header a {
+    display: inline-block;
     border: 1px solid rgba(255, 255, 255, 0.3);
     color: white;
     text-decoration: none;
-
+    transition: background-color 200ms ease, color 200ms ease, transform 200ms ease;
+    /* Rende graduali i cambi di colore e movimento dei link della navigazione. */
 }
 
 #site-header a:hover {
     background-color: hsl(45, 90%, 60%);
     border-color: hsl(45, 90%, 60%);
     color: black;
+    transform: translateY(-3px);
 }
 
 
@@ -93,10 +164,10 @@ p {
     line-height: 1.6;
 }
 
-#site-header strong::after {
+/* #site-header strong::after {
     content: "\f121";
     font-family: "Font Awesome 6 Free";
-}
+} */
 
 
 /* inzio lavoro main */
@@ -104,8 +175,19 @@ main {
     max-width: 920px;
     margin: 0 auto;
     padding: 16px;
-
 }
+
+/* le sezioni entrano dal basso quando si carica la pagina. */
+main section {
+    animation: section-in 500ms ease-out both;
+}
+
+/* Un piccolo ritardo diverso crea un effetto a cascata. */
+main section:nth-of-type(1) { animation-delay: 100ms; }
+main section:nth-of-type(2) { animation-delay: 200ms; }
+main section:nth-of-type(3) { animation-delay: 350ms; }
+main section:nth-of-type(4) { animation-delay: 600ms; }
+main section:nth-of-type(5) { animation-delay: 800ms; }
 
 /* modello le sezioni */
 section {
@@ -175,6 +257,12 @@ h2::before {
     margin: 0 auto;
     object-fit: cover;
     object-position: center 35%;
+    transition: transform 300ms ease;
+}
+
+/* ingrandisco l'immagine e ruota */
+.avatar:hover {
+    transform: scale(1.05) rotate(-5deg);
 }
 
 
@@ -194,10 +282,19 @@ h2::before {
     border: 3px solid hsl(45, 90%, 60%);
     border-radius: 500px;
     padding: 5px 10px;
+    cursor: pointer;
+    transition: transform 300ms ease, background-color 300ms ease;
 }
 
-/* primo elemento di lista evidenziato */
-.skill-list li:first-child {
+/* primo elemento di lista evidenziato
+/* .skill-list li:first-child {
+    color: black;
+    background-color: hsl(45, 90%, 60%);
+    border: 3px solid hsl(220, 60%, 30%); 
+} */
+
+.skill-list li:hover {
+    transform: translateY(-2px);
     color: black;
     background-color: hsl(45, 90%, 60%);
     border: 3px solid hsl(220, 60%, 30%);
@@ -241,6 +338,7 @@ h2::before {
 
 /* La card è il riferimento per posizionare il badge al suo interno. */
 /* Le card possono crescere o restringersi */
+
 .project {
     flex-grow: 1;
     flex-shrink: 1;
@@ -250,6 +348,18 @@ h2::before {
     background-color: #ece6d8;
     border-left: 5px solid hsl(220, 60%, 30%);
     position: relative;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.08);
+    /* Ombra di base */
+    transition: transform 200ms ease-out, box-shadow 200ms ease-out;
+    /* rende graduali movimento e ombra. */
+}
+
+.project:hover {
+    transform: translateY(-5px);
+    /* quando passo con il mouse la card si solleva leggermente */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    /* l'ombra diventa più marcata */
+    cursor: pointer;
 }
 
 .project h3,
@@ -273,6 +383,8 @@ i {
     background-color: red;
     color: white;
     border-radius: 0 4px 0 4px;
+    animation: pulse-badge 2s ease-in-out infinite;
+    transform-origin: top right;
 }
 
 .fa-brands .fa-github {
@@ -341,7 +453,7 @@ button {
     height: 35px;
 }
 
-#apri-contatti{
+#apri-contatti {
     width: auto;
 }
 
@@ -356,7 +468,7 @@ button:hover {
     margin-right: 8px;
 }
 
-#contattami i{
+#contattami i {
     margin-top: 10px;
 }
 
@@ -376,6 +488,12 @@ button:hover {
     border-radius: 50%;
     background-color: #263a5c;
     color: white;
+    animation: pulse-ring 2.2s ease-out infinite;
+}
+
+/* il pulsante si ingrandisce leggermente. */
+.back-to-top:hover {
+    transform: scale(1.08);
 }
 
 /* stilizzo il footer */
@@ -487,6 +605,15 @@ button:hover {
 /* Impedisce alla regola .overlay di rendere visibile un elemento con hidden. */
 .overlay[hidden] {
     display: none;
+}
+
+/* L'animazione parte quando JavaScript toglie l'attributo hidden. */
+.overlay:not([hidden]) {
+    animation: overlay-in 500ms ease-out;
+}
+
+.overlay:not([hidden]) .modal {
+    animation: modal-in 250ms ease-out;
 }
 
 /* Centra il riquadro nell'overlay e permette di scorrere il form se è troppo alto. */
